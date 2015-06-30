@@ -12,17 +12,17 @@ if (cluster.isMaster) {
 
      // Create four workers
      for (var i = 0; i < 4; i++) {
-     	console.log('Creating worker ' + i)
-         cluster.fork();
+        console.log('Creating worker ' + i);
+        cluster.fork();
      }
 
-	 Object.keys(cluster.workers).forEach(function(id) {
-	  console.log("I am running with ID : "+cluster.workers[id].process.pid);
-	 });
+  Object.keys(cluster.workers).forEach(function(id) {
+    console.log("I am running with ID : "+cluster.workers[id].process.pid);
+  });
 
-	 cluster.on('exit', function(worker, code, signal) {
-	   console.log('worker ' + worker.process.pid + ' died');
-	 });
+  cluster.on('exit', function(worker, code, signal) {
+    console.log('worker ' + worker.process.pid + ' died');
+  });
 
  // Code to run if we're in a worker process
  } else {
@@ -58,6 +58,6 @@ if (cluster.isMaster) {
 	var port = process.env.FH_PORT || process.env.OPENSHIFT_NODEJS_PORT || 8001;
 	var host = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 	var server = app.listen(port, host, function() {
-	  console.log("App started at: " + new Date() + " on port: " + port);
+    console.log("App started at: " + new Date() + " on port: " + port);
 	});
-};
+}
