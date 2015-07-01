@@ -1,4 +1,4 @@
-This is an app to test clustering on the FeedHEnry platform.
+This is an app to test clustering on the FeedHenry platform.
 
 Steps to use are ...
 * Simply create a cloud app from this repo.
